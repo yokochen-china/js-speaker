@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    padding: 1em;
+}
+
+.tip-title {
+    font-size: 32px;
+    text-align: center;
+}
+
+.btn {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    background-color: #0087ff;
+    font-size: 14px;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.start {
+    &::after {
+        content: "";
+        display: block;
+        position: fixed;
+        background: #0087ff;
+        width: 140px;
+        height: 100px;
+        top: 0;
+        left: -4px;
+        right: 0;
+        bottom: 0;
+        opacity: .2;
+        margin: auto;
+        border-radius: 50%;
+        animation: -rotate 3s linear infinite;
+        z-index: -2;
+        transform-origin:center;
+    }
+    &::before {
+        content: "";
+        display: block;
+        position: fixed;
+        background: #0087ff;
+        width: 100px;
+        height: 140px;
+        left: 0;
+        top: -4px;
+        right: 0;
+        bottom: 0;
+        opacity: .4;
+        margin: auto;
+        border-radius: 50%;
+        animation: rotate 3s linear infinite;
+        z-index: -2;
+        transform-origin:center;
+    }
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(20deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes -rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.result {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 15px;
+    text-align: center;
+    background: none;
+    border-top: 1px solid #fff;
+    transition: all .2s;
+    margin-bottom: -100px;
+    font-size: 22px;
+    &.right {
+        background: green;
+        color: #fff;
+        margin-bottom: 0px;
+    }
+    &.error {
+        background: red;
+        color: #fff;
+        margin-bottom: 0px;
+    }
+}
